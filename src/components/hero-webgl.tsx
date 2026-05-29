@@ -114,8 +114,8 @@ const Scene = () => {
 }
 
 export const Hero3DWebGL = () => {
-  const titleWords = "Synapse AI".split(" ")
-  const subtitle = "Нейроинтерфейсы нового поколения."
+  const titleWords = "Какой ты ИИ?".split(" ")
+  const subtitle = "Узнай, какой искусственный интеллект живёт в тебе — пройди опрос и открой своё цифровое альтер-эго."
   const [visibleWords, setVisibleWords] = useState(0)
   const [subtitleVisible, setSubtitleVisible] = useState(false)
   const [delays, setDelays] = useState<number[]>([])
@@ -173,6 +173,16 @@ export const Hero3DWebGL = () => {
             {subtitle}
           </div>
         </div>
+        {subtitleVisible && (
+          <div className="mt-8 fade-in-subtitle" style={{ animationDelay: `${titleWords.length * 0.13 + 0.6 + subtitleDelay}s` }}>
+            <a
+              href="#quiz"
+              className="pointer-events-auto inline-block bg-red-500 hover:bg-red-600 text-white font-bold text-lg px-10 py-4 rounded-lg transition-colors duration-200 font-orbitron"
+            >
+              Пройти опрос
+            </a>
+          </div>
+        )}
       </div>
 
       <Canvas
